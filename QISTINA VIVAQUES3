@@ -1,0 +1,53 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package viva.ques.pkg3;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author WAN QISTINA DAMIA
+ */
+import java.util.Scanner;
+public class VIVAQUES3 {
+
+    public static void main(String[] args) {
+         Scanner input = new Scanner (System.in);
+        
+        System.out.print("Enter the lower limit of the range: ");
+        int lowlimit = input.nextInt();
+        
+        System.out.print("\nEnter the lower limit of the range: ");
+        int uplimit = input.nextInt();
+        
+        System.out.print("\nThe prime numbers within the range [" + lowlimit + ", " + uplimit + "] are: [ " );
+        
+        generatePrimes(lowlimit,uplimit);
+
+        System.out.print("]");
+    }
+    
+    public static void generatePrimes(int lowlimit, int uplimit){
+        for(int i = lowlimit; i<=uplimit; i++){
+            if(primeNumber(i)){
+                System.out.print(i + " ");
+            }
+        }  
+    }
+    
+    public static boolean primeNumber(int num ){
+        if(num<=1){
+            return false;
+        }
+        for(int i = 2; (i*i)<=num; i++){
+            if(num%i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+    
+
